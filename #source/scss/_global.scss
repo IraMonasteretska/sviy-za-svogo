@@ -1,0 +1,132 @@
+body,
+html {
+    height: 100%;
+}
+
+
+
+.main {
+    flex: 1 1 auto;
+    padding-top: 100px;
+}
+
+.pagewrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: "Fixel";
+    font-size: 16px;
+    line-height: 150%;
+
+    &.hidden {
+        overflow: hidden;
+    }
+}
+
+@media(min-width:1500px) {
+    .container {
+        max-width: 1184px;
+    }
+}
+
+input {
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+h1 {
+    color: #212121;
+    font-size: 64px;
+    line-height: 125%;
+    font-family: "NAMU-Pro";
+    font-weight: 400;
+}
+
+h2 {
+    color: #212121;
+    font-size: 48px;
+    line-height: 125%;
+    font-family: "NAMU-Pro";
+    font-weight: 400;
+}
+
+.bluebtn {
+    border-radius: 30px;
+    background: #14B9FF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 33px;
+    min-height: 48px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background: url('../img/general/btn-arr.svg') no-repeat center/ 100%;
+        margin-left: 8px;
+    }
+}
+
+.text-right {
+    text-align: right;
+}
+
+.main {
+    &>div {
+        &:last-child {
+            margin-bottom: 90px;
+        }
+    }
+}

@@ -1,0 +1,144 @@
+header.header {
+    padding: 24px 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #fff;
+    transition: 0.3s;
+    
+    .logo {
+        img {
+            max-width: 69px;
+            width: 100%;
+        }
+    }
+
+    &.scrolled {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+
+    li {
+        margin-left: 49px;
+
+        a {
+            color: #707070;
+            line-height: 120%;
+            font-weight: 500;
+        }
+    }
+}
+
+.header__contacts {
+    width: 100%;
+    max-width: calc(100% - 70px);
+    flex: 0 0 calc(100% - 70px);
+    display: flex;
+    align-items: center;
+
+    li {
+        margin-right: 40px;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 24px;
+            width: 1px;
+            background: #212121;
+        }
+
+        &:last-child {
+            margin-right: 0;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        a {
+            color: #212121;
+            font-weight: 600;
+            line-height: 120%;
+
+        }
+    }
+}
+
+.language {
+    width: 100%;
+    max-width: 70px;
+    flex: 0 0 70px;
+    padding-left: 15px;
+    position: relative;
+
+    .language__link {
+        display: flex;
+        align-items: center;
+        position: relative;
+        color: #707070;
+        font-weight: 600;
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            width: 24px;
+            height: 24px;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            background: url('../img/general/dd-arrow.svg') no-repeat center center/100%;
+            margin-top: -1px;
+        }
+    }
+
+    ul {
+        opacity: 0;
+        z-index: -1;
+        visibility: hidden;
+        transition: 0.3s;
+        transform: translateY(-10px);
+        width: 60px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background: #fff;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 10;
+        border-radius: 3px;
+        padding: 3px 0;
+
+        &.active {
+            opacity: 1;
+            z-index: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        li {
+            a {
+                font-weight: 500;
+                padding: 4px 5px;
+                transition: 0.3s;
+                display: block;
+                text-transform: uppercase;
+                color: #707070;
+
+                &:hover {
+                    background: rgba(#14B9FF, 0.1);
+                    color: #000;
+                }
+            }
+        }
+    }
+}
