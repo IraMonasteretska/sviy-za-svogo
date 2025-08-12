@@ -108,6 +108,8 @@ h2 {
     font-weight: 600;
     font-size: 18px;
     letter-spacing: 0.5px;
+    border: 1px solid #14B9FF;
+    transition: 0.5s;
 
     &::after {
         content: '';
@@ -116,6 +118,11 @@ h2 {
         height: 24px;
         background: url('../img/general/btn-arr.svg') no-repeat center/ 100%;
         margin-left: 8px;
+    }
+
+    &:hover {
+       background: #1199d3;
+       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 }
 
@@ -128,5 +135,66 @@ h2 {
         &:last-child {
             margin-bottom: 90px;
         }
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+
+
+
+
+@media(max-width:1399.8px) {
+    h1 {
+        font-size: 44px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+}
+
+@media(max-width:1199.8px) {
+    .main {
+        padding-top: 90px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+
+}
+
+@media(max-width:991.8px) {
+    .main>div:last-child {
+        margin-bottom: 60px;
+    }
+}
+
+@media(max-width:767.8px) {
+    h2 {
+        font-size: 28px;
+    }
+}
+
+@media(max-width:575.8px) {
+   .main {
+        padding-top: 80px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
     }
 }

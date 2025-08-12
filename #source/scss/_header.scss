@@ -7,7 +7,7 @@ header.header {
     z-index: 1000;
     background: #fff;
     transition: 0.3s;
-    
+
     .logo {
         img {
             max-width: 69px;
@@ -32,6 +32,11 @@ header.header {
             color: #707070;
             line-height: 120%;
             font-weight: 500;
+            transition: 0.3s;
+
+            &:hover {
+                color: #14B9FF;
+            }   
         }
     }
 }
@@ -70,7 +75,11 @@ header.header {
             color: #212121;
             font-weight: 600;
             line-height: 120%;
+            transition: 0.3s;
 
+            &:hover {
+                color: #14B9FF;
+            }
         }
     }
 }
@@ -141,4 +150,302 @@ header.header {
             }
         }
     }
+}
+
+.header__burger {
+    display: none;
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+    z-index: 999;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.navcol.open {
+    border-top: 1px solid #212121;
+}
+
+.header__contacts-mob {
+    display: none;
+}
+
+@media(max-width:1399.8px) {
+    .nav li {
+        margin-left: 40px;
+    }
+}
+
+@media(max-width:1199.8px) {
+    .nav li {
+        margin-left: 30px;
+    }
+
+    .header__contacts li a {
+        font-size: 14px;
+    }
+
+    .header__contacts li {
+        margin-right: 30px;
+    }
+
+    .header__contacts li:after {
+        right: -15px;
+    }
+}
+
+@media(max-width:991.8px) {
+
+    header.header {
+        height: 100px;
+        padding: 15px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .navcol {
+        // display: none;
+        transform: translateX(100%);
+        transition: 0.5s;
+        position: fixed;
+        top: 100px;
+        right: 0;
+        height: calc(100vh - 100px);
+        width: 400px;
+        background: #fff;
+        z-index: 15;
+
+        &.open {
+            transform: translateX(0);
+        }
+    }
+
+    .header__burger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+
+    button.burger {
+        display: inline-block;
+        position: relative;
+        padding: 0;
+        width: 32px;
+        height: 20px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+
+        &.burger2 {
+
+            &:after,
+            &:before,
+            span {
+                width: 100%;
+                height: 2px;
+                border-radius: 100px;
+                position: absolute;
+                display: block;
+                background: #212121;
+                right: 0;
+
+            }
+
+            &:after,
+            &:before {
+                content: "";
+                transition: 0.3s width 0.4s;
+            }
+
+            &:after {
+                top: 0px;
+                left: 0px;
+                margin-top: 0px;
+            }
+
+            &:before {
+                bottom: 0px;
+                right: 0px;
+                margin-bottom: 0px;
+            }
+
+            span {
+                top: 50%;
+                margin-top: -1px;
+                transition: transform 0.3s;
+
+                &:before {
+                    content: "";
+                    background: #212121;
+                    width: 100%;
+                    height: 2px;
+                    border-radius: 100px;
+                    position: absolute;
+                    left: 0px;
+                    transition: transform 0.3s;
+                }
+            }
+
+            &.on {
+
+
+                &:after {
+                    transition: all 0.2s;
+                    width: 0%;
+                    left: 0px;
+                }
+
+                &:before {
+                    transition: all 0.2s;
+                    width: 0%;
+                    right: 0px;
+                }
+
+                span {
+                    transform: rotate(45deg);
+                    transition: 0.3s transform 0.4s;
+
+                    &:before {
+                        transform: rotate(-90deg);
+                        transition: 0.3s transform 0.4s;
+                    }
+                }
+
+
+            }
+        }
+
+    }
+
+    .header .container {
+        position: relative;
+    }
+
+    .header__contacts {
+        width: 100%;
+        max-width: calc(100% - 124px);
+        flex: 0 0 calc(100% - 124px);
+    }
+
+    .language {
+        max-width: 80px;
+        flex: 0 0 80px;
+        padding-right: 10px;
+    }
+
+    .language ul {
+        right: 10px;
+    }
+
+    .nav {
+        display: block;
+        padding: 20px;
+
+        li {
+            margin-left: 0;
+            margin-bottom: 10px;
+
+            a {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .language {
+        z-index: 16;
+    }
+
+    .navcol {
+        overflow: auto;
+        padding-bottom: 15px;
+    }
+}
+
+@media(max-width:575.8px) {
+
+    .header__contacts {
+        flex-wrap: wrap;
+
+        li {
+            margin-right: 0;
+            margin-bottom: 3px;
+
+            &::after {
+                display: none;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            a {
+                display: block;
+            }
+        }
+    }
+
+    header.header {
+        padding: 5px 0;
+        height: 80px;
+    }
+
+    .navcol {
+        top: 80px;
+        height: calc(100vh - 80px);
+        width: 300px;
+    }
+
+    .header__contacts {
+        display: none;
+    }
+
+    .header__contacts.header__contacts-mob {
+        display: block;
+    }
+
+    .header {
+        .col-xl-5.col-lg-5.col-sm-10 {
+            justify-content: flex-end;
+        }
+    }
+
+    .nav li a {
+        font-size: 16px;
+    }
+
+    .header__contacts {
+        padding-left: 20px;
+        max-width: 100%;
+
+        li {
+            margin-bottom: 10px;
+
+            a {
+                font-size: 16px;
+                color: #707070;
+            }
+        }
+    }
+
+
 }
