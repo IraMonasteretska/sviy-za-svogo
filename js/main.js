@@ -9,10 +9,10 @@ $(document).ready(function () {
         spaceBetween: 4,
         loop: true,
         speed: 700,
-        // autoplay: {
-        //     delay: 5000,
-        //     disableOnInteraction: false,
-        // },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
@@ -122,8 +122,8 @@ $(document).ready(function () {
         $('.navcol').toggleClass('open');
     })
 
-    const menuBtn = document.querySelector('.burger2'); 
-    const menu = document.querySelector('.navcol'); 
+    const menuBtn = document.querySelector('.burger2');
+    const menu = document.querySelector('.navcol');
     const overlay = document.querySelector('.menu-overlay');
 
     menuBtn.addEventListener('click', () => {
@@ -137,14 +137,12 @@ $(document).ready(function () {
         menuBtn.classList.remove('on');
     });
 
+    $('.paysort button').click(function () {
+        $('.paysort button').removeClass('active');
+        $(this).addClass('active');
+    });
 
-
-
-
-
-
-
-
+    // реквізити
 
 
 

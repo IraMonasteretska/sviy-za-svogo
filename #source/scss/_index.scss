@@ -234,6 +234,12 @@
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 30px;
+    transition: 0.3s;
+
+    &:hover {
+        background: #e1f5ff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
 
     img {
         width: 48px;

@@ -8,12 +8,23 @@
 
 .blog-item {
     margin-bottom: 48px;
-    display: inline-block;
+    display: block;
 
     &:hover {
         .imgwrap img {
             transform: scale(1.05);
         }
+
+        .blog-item__info .readmore {
+            color: #14B9FF;
+
+            svg {
+                path {
+                    stroke: #14B9FF;
+                }
+            }
+        }
+
     }
 
     .imgwrap {
@@ -37,7 +48,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 132px;
+        min-height: 132px;
 
         h4 {
             display: -webkit-box;
@@ -70,6 +81,16 @@
             color: #212121;
             display: inline-flex;
             align-items: center;
+            transition: 0.3s;
+
+            svg {
+                width: 24px;
+                margin-left: 8px;
+                
+                path {
+                    transition: 0.3s;
+                }
+            }
         }
     }
 }
@@ -87,4 +108,77 @@
         margin-left: 8px;
         width: 24px;
     }
+}
+
+@media(max-width:1399.8px) {
+    .blog-section h1 {
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:1199.8px) {
+    .blog-item .imgwrap {
+        height: 180px;
+    }
+
+    .blog-item .description h4 {
+        font-size: 16px;
+    }
+
+    .blog-item .description {
+        padding: 10px;
+        min-height: 100px;
+    }
+
+    .blog-item .blog-item__info .readmore {
+        font-size: 14px;
+    }
+
+    .blog-item {
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:767.8px) {
+
+    .blog-item .imgwrap {
+        height: 150px;
+    }
+
+    .blog-item .description h4 {
+        font-size: 15px;
+    }
+
+    .blog-item .blog-item__info .date,
+    .blog-item .blog-item__info .readmore {
+        font-size: 12px;
+    }
+
+    .blog-item .blog-item__info .readmore img {
+        width: 16px;
+    }
+
+}
+
+@media(max-width:575.8px) {
+    .blog-section {
+        padding-top: 30px;
+    }
+
+    .blog-section h1 {
+        margin-bottom: 20px;
+    }
+
+    .blog-item .imgwrap {
+        border-radius: 10px;
+    }
+
+    .blog-item {
+        margin-bottom: 20px;
+    }
+
+    .blog-item .imgwrap {
+        height: 170px;
+    }
+
 }

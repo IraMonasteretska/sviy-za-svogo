@@ -1,0 +1,144 @@
+.paysort {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        display: inline-block;
+        margin-right: 12px;
+
+        button {
+            background: #E7F7FF;
+            padding: 4px 21px;
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            border: 1px solid #14B9FF;
+            margin-bottom: 16px;
+            border-radius: 300px;
+            color: #14B9FF;
+            font-weight: 500;
+            font-size: 16px;
+            font-family: "Fixel";
+            transition: 0.3s;
+
+            &:hover {
+                background: #fff;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            svg {
+                width: 20px;
+                margin-left: 8px;
+            }
+
+            &.active {
+                background: #14B9FF;
+                color: #fff;
+
+                svg {
+                    path {
+                        stroke: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rekvbox {
+    border: 1px solid #CFCFCF;
+    border-radius: 20px;
+    padding: 36px;
+    margin-bottom: 24px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    h3 {
+        font-size: 36px;
+        font-family: "NAMU-Pro";
+        margin-bottom: 32px;
+        font-weight: 400;
+    }
+
+    p {
+        color: #212121;
+        margin-bottom: 12px;
+
+        b {
+            font-weight: 600;
+        }
+    }
+
+    p.title {
+        font-weight: 600;
+    }
+}
+
+.bankaccount {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid #707070;
+    border-radius: 30px;
+    height: 64px;
+    padding: 6px 40px;
+    width: 100%;
+
+    .bankaccount__num {
+        margin: 0;
+        max-width: calc(100% - 150px);
+        flex: 0 0 calc(100% - 150px);
+        color: #14B9FF;
+        font-weight: 600;
+    }
+
+    .copy {
+        display: flex;
+        align-items: center;
+        color: #212121;
+        font-weight: 600;
+        font-family: "Fixel";
+        padding: 0;
+        background: transparent;
+        width: 100%;
+        max-width: 150px;
+        flex: 0 0 150px;
+        justify-content: flex-end;
+        font-size: 16px;
+        transition: 0.3s;
+
+        svg {
+            margin-left: 8px;
+            width: 24px;
+
+            path {
+                transition: 0.3s;
+            }
+        }
+
+        &:hover {
+            color: #14B9FF;
+
+            svg {
+                path {
+                    fill: #14B9FF;
+                }
+            }
+        }
+
+        &.active {
+            color: #0faf24;
+
+            svg {
+                path {
+                    fill: #0faf24;
+                }
+            }
+        }
+
+
+    }
+}

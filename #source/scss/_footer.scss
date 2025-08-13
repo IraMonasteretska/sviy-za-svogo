@@ -124,3 +124,41 @@ footer.footer {
         margin-bottom: 15px;
     }
 }
+
+@media(max-width:575.8px) {
+
+    footer.footer p,
+    .footer__nav li a {
+        font-size: 14px;
+    }
+
+    .footer__social li {
+        margin-right: 10px;
+
+        &:first-child {
+            display: none;
+        }
+    }
+
+    .footer__logo img {
+        max-width: 60px;
+        vertical-align: top;
+    }
+
+    .footer__nav li {
+        margin: 0;
+    }
+
+    footer.footer {
+        padding-bottom: 15px;
+    }
+
+    footer.footer p {
+        margin-bottom: 10px;
+    }
+
+    .footer__social {
+        margin-top: 10px;
+    }
+    
+}
