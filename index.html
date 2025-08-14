@@ -77,7 +77,14 @@
                 </div>
                 <div class="bottsection">
                     <div class="bnwrapper">
-                        <img src="img/main/img1.jpg" alt="img">
+                        <!-- <img src="img/main/img1.jpg" alt="img"> -->
+                        <picture>
+                            <source type="image/jpeg" media="(max-width: 575.98px)" srcset="img/main/img1-2.jpg">
+
+                            <source type="image/jpeg" media="(min-width: 576px)" srcset="img/main/img1.jpg">
+
+                            <img src="img/main/img1.jpg" alt="img" loading="lazy" decoding="async">
+                        </picture>
                     </div>
                 </div>
             </div>
