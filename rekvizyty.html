@@ -63,7 +63,7 @@
                         <div class="col-xl-4">
                             <ul class="paysort">
                                 <li>
-                                    <button class="active">
+                                    <button data-target="card">
                                         Платіж картою
                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20"
                                             viewBox="0 0 21 20" fill="none">
@@ -75,7 +75,7 @@
                                     </button>
                                 </li>
                                 <li>
-                                    <button>
+                                    <button data-target="ua">
                                         По Україні
                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20"
                                             viewBox="0 0 21 20" fill="none">
@@ -87,7 +87,7 @@
                                     </button>
                                 </li>
                                 <li>
-                                    <button>
+                                    <button data-target="swift">
                                         Swift
                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20"
                                             viewBox="0 0 21 20" fill="none">
@@ -99,7 +99,7 @@
                                     </button>
                                 </li>
                                 <li>
-                                    <button>
+                                    <button data-target="paypal">
                                         Paypal
                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20"
                                             viewBox="0 0 21 20" fill="none">
@@ -111,7 +111,7 @@
                                     </button>
                                 </li>
                                 <li>
-                                    <button>
+                                    <button data-target="crypto">
                                         Криптовалюта
                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20"
                                             viewBox="0 0 21 20" fill="none">
@@ -123,7 +123,7 @@
                                     </button>
                                 </li>
                                 <li>
-                                    <button>
+                                    <button data-target="mono">
                                         Monobank
                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20"
                                             viewBox="0 0 21 20" fill="none">
@@ -138,7 +138,7 @@
                         </div>
                         <div class="col-xl-8">
                             <div class="rekvlist">
-                                <div class="rekvbox">
+                                <div class="rekvbox" id="rekv-card">
                                     <h3>Платіж картою</h3>
                                     <h5>Анушкевичус Юрій</h5>
                                     <p>ПриватБанк</p>
@@ -168,7 +168,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="rekvbox">
+                                <div class="rekvbox" id="rekv-ua">
                                     <h3>Банківський переказ по Україні</h3>
                                     <p>UAH</p>
                                     <h5>БО БЛАГОДІЙНИЙ ФОНД СВІЙ ЗА СВОГО</h5>
@@ -206,7 +206,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="rekvbox">
+                                <div class="rekvbox" id="rekv-swift">
                                     <h3>Swift</h3>
                                     <p>EUR</p>
                                     <p>
@@ -341,7 +341,7 @@
                                         ВУЛ. ПРОМИСЛОВА, Б. 31
                                     </p>
                                 </div>
-                                <div class="rekvbox">
+                                <div class="rekvbox" id="rekv-paypal">
                                     <h3>Paypal</h3>
                                     <div class="bankaccount">
                                         <p class="bankaccount__num">yuraifua@gmail.com</p>
@@ -369,7 +369,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="rekvbox">
+                                <div class="rekvbox" id="rekv-crypto">
                                     <h3>Криптовалюта</h3>
                                     <p><b>Bitcoin гаманець</b></p>
                                     <div class="bankaccount">
@@ -451,7 +451,7 @@
                                     </div>
 
                                 </div>
-                                <div class="rekvbox">
+                                <div class="rekvbox" id="rekv-mono">
                                     <img class="reklogo" src="img/general/mono.png" alt="monobank">
                                     <a href="#" class="blackrekbtn">
                                         <img src="img/general/mono-btn.svg" alt="monobank">

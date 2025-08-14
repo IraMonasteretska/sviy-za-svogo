@@ -162,7 +162,15 @@ $(document).ready(function () {
         }
     });
 
-
+     $('.paysort button').on('click', function () {
+        var target = $(this).data('target');
+        var $block = $('#rekv-' + target);
+        if ($block.length) {
+            $('html, body').animate({
+                scrollTop: $block.offset().top - 100 // відступ від верху (можна змінити)
+            }, 600);
+        }
+    });
 
 
 
