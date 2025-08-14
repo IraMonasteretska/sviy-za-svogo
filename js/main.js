@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    $('.language__link').click(function () {
+    $('.language__link').click(function (e) {
+        e.preventDefault();
         $(this).next('ul').toggleClass('active');
     })
 
@@ -143,6 +144,25 @@ $(document).ready(function () {
     });
 
     // реквізити
+
+    document.addEventListener("click", function (e) {
+        if (e.target.closest(".copy")) {
+            const btn = e.target.closest(".copy");
+
+            document.querySelectorAll(".copy").forEach(b => {
+                b.classList.remove("active");
+                b.querySelector("span").textContent = "Скопіювати";
+            });
+
+            const accountNum = btn.closest(".bankaccount").querySelector(".bankaccount__num").textContent.trim();
+            navigator.clipboard.writeText(accountNum).then(() => {
+                btn.classList.add("active");
+                btn.querySelector("span").textContent = "Скопійовано";
+            });
+        }
+    });
+
+
 
 
 

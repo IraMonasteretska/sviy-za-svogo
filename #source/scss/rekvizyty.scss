@@ -1,6 +1,8 @@
 .paysort {
     display: flex;
     flex-wrap: wrap;
+    position: sticky;
+    top: 100px;
 
     li {
         display: inline-block;
@@ -60,6 +62,7 @@
         font-family: "NAMU-Pro";
         margin-bottom: 32px;
         font-weight: 400;
+        line-height: 100%;
     }
 
     p {
@@ -69,10 +72,17 @@
         b {
             font-weight: 600;
         }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
-    p.title {
+    h5 {
         font-weight: 600;
+        margin-bottom: 12px;
+        color: #212121;
+        font-size: 16px;
     }
 }
 
@@ -86,6 +96,11 @@
     height: 64px;
     padding: 6px 40px;
     width: 100%;
+    margin-bottom: 32px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 
     .bankaccount__num {
         margin: 0;
@@ -139,6 +154,161 @@
             }
         }
 
+    }
+}
 
+.blackrekbtn {
+    background: #212121;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    transition: 0.3s;
+
+    &:hover {
+        background: #14B9FF;
+    }
+}
+
+.reklogo {
+    margin-bottom: 24px;
+}
+
+.rekbottom-description {
+    margin-top: 48px;
+
+    p {
+        font-size: 16px;
+        line-height: 150%;
+        color: #212121;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.bankaccount .bankaccount__num {
+    word-wrap: break-word;
+}
+
+.blackrekbtn img {
+    max-width: 111px;
+    max-height: 100%;
+}
+
+@media(max-width:1399.8px) {
+    .rekvbox h3 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .rekvbox {
+        padding: 30px;
+    }
+
+    .bankaccount {
+        margin-top: 15px;
+    }
+
+    .rekvbox h5 {
+        margin-bottom: 8px;
+    }
+}
+
+@media(max-width:991.8px) {
+    .bankaccount {
+        padding: 6px 20px;
+    }
+
+    .bankaccount {
+        min-height: 64px;
+        height: auto;
+    }
+
+    .bankaccount {
+        margin: 10px 0 25px;
+    }
+}
+
+@media(max-width:575.8px) {
+    .paysort li {
+        margin-right: 5px;
+
+        button {
+            font-size: 14px;
+            margin-bottom: 10px;
+            padding: 4px 16px;
+            min-height: 40px;
+        }
+    }
+
+    .rekvbox h3 {
+        font-size: 24px;
+    }
+
+    .rekvbox {
+        padding: 16px;
+    }
+
+    .rekvbox h5 {
+        margin-bottom: 5px;
+    }
+
+    .bankaccount {
+        flex-wrap: wrap;
+    }
+
+    .bankaccount .bankaccount__num {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .bankaccount .copy {
+        max-width: 100%;
+        flex: 0 0 100%;
+        justify-content: flex-start;
+    }
+
+    .bankaccount {
+        padding: 8px 10px;
+        border-radius: 15px;
+    }
+
+    .rekvbox h3 {
+        margin-bottom: 10px;
+        line-height: 150%;
+    }
+
+    .bankaccount .bankaccount__num {
+        margin-bottom: 2px;
+        font-size: 14px;
+    }
+
+    .rekvbox p {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .blackrekbtn {
+        height: 50px;
+    }
+
+    .reklogo {
+        max-width: 160px;
+        margin-bottom: 12px;
+    }
+
+    .blackrekbtn img {
+        max-width: 100px;
+    }
+
+    .rekbottom-description {
+        margin-top: 30px;
+    }
+
+    .rekvbox h5 {
+        font-size: 14px;
     }
 }
