@@ -36,23 +36,23 @@ $(document).ready(function () {
 
     // aid slider
     var swiper = new Swiper(".aidright", {
-        loop: true,
+        loop: false,
         spaceBetween: 20,
-        slidesPerView: 1,
+        // slidesPerView: 1,
         // allowTouchMove: false,
         speed: 500,
         // autoplay: {
         //     delay: 5000,
         //     disableOnInteraction: false,
         // },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination.aidpag",
-            type: "fraction",
-        },
+        // navigation: {
+        //     nextEl: ".swiper-button-next.garr",
+        //     prevEl: ".swiper-button-prev.garr",
+        // },
+        // pagination: {
+        //     el: ".swiper-pagination.aidpag",
+        //     type: "fraction",
+        // },
         breakpoints: {
             575: {
                 slidesPerView: 1,
@@ -66,14 +66,22 @@ $(document).ready(function () {
                 slidesPerView: 1.5,
             },
             1200: {
-                slidesPerView: 2,
+                slidesPerView: 1.8,
             },
         },
     });
     var swiper2 = new Swiper(".aidleft", {
-        loop: true,
+        loop: false,
         spaceBetween: 0,
         speed: 500,
+        navigation: {
+            nextEl: ".swiper-button-next.garr",
+            prevEl: ".swiper-button-prev.garr",
+        },
+        pagination: {
+            el: ".swiper-pagination.aidpag",
+            type: "fraction",
+        },
         // navigation: {
         //     nextEl: ".swiper-button-next",
         //     prevEl: ".swiper-button-prev",
@@ -91,7 +99,6 @@ $(document).ready(function () {
         // },
     });
 
-    // Синхронізація
     swiper2.controller.control = swiper;
     swiper.controller.control = swiper2;
 
@@ -162,7 +169,7 @@ $(document).ready(function () {
         }
     });
 
-     $('.paysort button').on('click', function () {
+    $('.paysort button').on('click', function () {
         var target = $(this).data('target');
         var $block = $('#rekv-' + target);
         if ($block.length) {
@@ -173,6 +180,22 @@ $(document).ready(function () {
     });
 
 
+    // TO Top
+    $(function () {
+        $('.totop').hide();
+
+        $(window).on('scroll', function () {
+            if ($(window).scrollTop() + $(window).height() >= $(document).height() - 50) {
+                $('.totop').fadeIn();
+            } else {
+                $('.totop').fadeOut();
+            }
+        });
+
+        $('.totop').on('click', function () {
+            $('html, body').animate({ scrollTop: 0 }, 600);
+        });
+    });
 
 
 
