@@ -597,6 +597,7 @@
 .aidright {
     .imgwrap {
         height: 330px;
+        // aspect-ratio: 16 / 9;
 
         img,
         .plyr {
@@ -879,6 +880,7 @@
 
     .aidright .imgwrap {
         height: auto;
+         aspect-ratio: 16 / 9;
     }
 
 
@@ -1036,7 +1038,7 @@
 
 
     .aidright__wrap {
-        margin-top: -30px;
+        margin-top: -20px;
     }
 
     .aidslide {
