@@ -508,16 +508,22 @@
     position: relative;
     overflow: hidden;
 
-    .plyr {
+    // .plyr {
+    //     width: 100%;
+    //     height: 100%;
+    //     object-fit: cover;
+    // }
+
+    video {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 }
 
-.plyr.plyr--stopped .plyr__controls {
-    display: none
-}
+// .plyr.plyr--stopped .plyr__controls {
+//     display: none
+// }
 
 //  .plyr__control.plyr__control--overlaid {
 //         background: transparent;
@@ -600,7 +606,8 @@
         // aspect-ratio: 16 / 9;
 
         img,
-        .plyr {
+        .plyr,
+        video {
             width: 100%;
             height: 100%;
             object-fit: cover;

@@ -198,37 +198,11 @@ $(document).ready(function () {
     });
 
     // плеєр
-    if ($('.player').length) {
-        const players = Plyr.setup('.player');
-    }
+    // if ($('.player').length) {
+    //     const players = Plyr.setup('.player');
+    // }
 
 
-
-
-
-
-
-
-
-
-
-    // $('.slider-for').slick({
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     arrows: true,
-    //     fade: true,
-    //     asNavFor: '.slider-nav',
-    //     prevArrow: '<button type="button" class="slick-prev"></button>',
-    //     nextArrow: '<button type="button" class="slick-next"></button>'
-
-    // });
-    // $('.slider-nav').slick({
-    //     slidesToShow: 2,
-    //     slidesToScroll: 1,
-    //     asNavFor: '.slider-for',
-    //     focusOnSelect: true,
-    //     arrows: false,
-    // });
     if ($('.slider-for').length) {
         $('.slider-for').on('init reInit afterChange', function (event, slick, currentSlide) {
             // currentSlide = індекс (0-based), тому додаємо 1
@@ -248,7 +222,7 @@ $(document).ready(function () {
         });
 
         $('.slider-nav').slick({
-            slidesToShow: 2,
+            slidesToShow: 1.8,
             slidesToScroll: 1,
             asNavFor: '.slider-for',
             focusOnSelect: true,
@@ -296,7 +270,47 @@ $(document).ready(function () {
         // Виклик для обох слайдерів
         pauseVideosInInactiveSlides('.slider-for.aidleft');
         pauseVideosInInactiveSlides('.slider-nav.aidright');
+
+
+
+
+
+
+        function handleSliderVideoAutoplay(sliderSelector) {
+            $(sliderSelector).on('afterChange', function (event, slick, currentSlide) {
+                // Зупинити всі відео
+                $(this).find('video').each(function () {
+                    this.pause();
+                    this.currentTime = 0;
+                });
+
+                // Запустити відео на активному та наступному слайді
+                var $slides = $(this).find('.slick-slide');
+                // Активний слайд
+                $slides.filter('[data-slick-index="' + currentSlide + '"]').find('video').each(function () {
+                    this.play();
+                });
+                // Наступний слайд (якщо є)
+                var nextIndex = currentSlide + 1;
+                $slides.filter('[data-slick-index="' + nextIndex + '"]').find('video').each(function () {
+                    this.play();
+                });
+            });
+
+            // Запустити відео на першому та другому слайді при ініціалізації
+            $(sliderSelector).on('init', function (event, slick) {
+                var $slides = $(this).find('.slick-slide');
+                $slides.filter('.slick-current, [data-slick-index="1"]').find('video').each(function () {
+                    this.play();
+                });
+            });
+        }
+
+        // Виклик для вашого слайдера з відео
+        handleSliderVideoAutoplay('.slider-nav.aidright');
     }
+
+
 })
 
 
